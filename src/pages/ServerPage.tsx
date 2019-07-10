@@ -3,6 +3,13 @@ import axios from 'axios';
 import DriveBar from '../components/DriveBar';
 import { Server } from '../types/Server';
 import Size from '../components/Size';
+import styled from '@emotion/styled';
+
+const Content = styled.div`
+  max-width: 800px;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+`;
 
 const ServerPage = () => {
   const [server, setServer] = useState<Server | null>(null);
@@ -26,10 +33,10 @@ const ServerPage = () => {
   })
   const drives = server.drives.map((drive: any, index: number) => <DriveBar drive={drive} key={index} />);
   return (
-    <React.Fragment>
+    <Content>
       <h1>{server.name} - <Size value={totalFree} /> / <Size value={totalCapacity} /></h1>
       {drives}
-    </React.Fragment>
+    </Content>
   );
 }
 
