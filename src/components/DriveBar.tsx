@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Drive } from '../types/Drive';
+import Size from './Size';
 
 const DriveContainer = styled.div`
   height: 100px;
@@ -17,7 +18,7 @@ type Props = {
 const DriveBar = ({ drive }: Props) => (
   <DriveContainer>
     {drive.brand} - {drive.model}<br/>
-    {drive.free} / {drive.capacity}
+    <Size value={drive.free} /> / <Size value={drive.capacity} />
   </DriveContainer>
 );
 
