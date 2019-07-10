@@ -18,17 +18,17 @@ const Container = styled.div`
 
 const UsedContainer = styled('div')<ContainerProps>`
   flex: ${props => props.size};
-  background-color: blue;
+  background-color: #90CDF4;
 `;
 
 const FreeContainer = styled('div')<ContainerProps>`
   flex: ${props => props.size};
-  background-color: green;
+  background-color: #9AE6B4;
 `;
 
 const SmallerContainer = styled('div')<ContainerProps>`
   flex: ${props => props.size};
-  background-color: #ddd;
+  background-color: #EDF2F7;
 `;
 
 const DriveUsage = ({ capacity, free, maxCapacity }: Props) => (

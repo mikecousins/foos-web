@@ -6,7 +6,7 @@ import DriveUsage from './DriveUsage';
 
 const DriveContainer = styled.div`
   width: 100%;
-  background-color: #eee;
+  background-color: #F7FAFC;
   margin-bottom: 10px;
   padding: 10px;
   display: flex;
