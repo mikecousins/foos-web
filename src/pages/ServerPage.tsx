@@ -27,7 +27,7 @@ const ServerPage = () => {
   const drives = server.drives.map((drive: any, index: number) => <DriveBar drive={drive} key={index} />);
   return (
     <React.Fragment>
-      <h1><Size value={totalFree} /> / <Size value={totalCapacity} /></h1>
+      <h1>{server.name} - <Size value={totalFree} /> / <Size value={totalCapacity} /></h1>
       {drives}
     </React.Fragment>
   );
