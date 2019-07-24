@@ -28,8 +28,10 @@ const ServerPage = () => {
   let totalCapacity = 0;
   let totalFree = 0;
   server.drives.forEach(drive => {
-    totalCapacity += drive.capacity;
-    totalFree += drive.free;
+    if (drive.data) {
+      totalCapacity += drive.capacity;
+      totalFree += drive.free;
+    }
   })
   const drives = server.drives.map((drive: any, index: number) => <DriveBar drive={drive} key={index} />);
   return (

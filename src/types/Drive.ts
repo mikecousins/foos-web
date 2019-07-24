@@ -5,4 +5,7 @@ export type Drive = {
   brand: string;
   model: string;
   temperature: number;
+  data: boolean;
+  content: boolean;
+  parity: boolean;
 };

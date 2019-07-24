@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckDouble, faDatabase, faList } from '@fortawesome/free-solid-svg-icons';
 import { Drive } from '../types/Drive';
 import Size from './Size';
 import DriveUsage from './DriveUsage';
@@ -49,7 +51,11 @@ const DriveBar = ({ drive }: Props) => (
         </DriveNumber>
       </DriveNumberContainer>
       <DriveDetails>
-        {drive.brand} - {drive.model}<br />
+        {drive.brand} - {drive.model}
+        {drive.data && <React.Fragment>&nbsp;<FontAwesomeIcon icon={faDatabase} title="Data" /></React.Fragment>}
+        {drive.content && <React.Fragment>&nbsp;<FontAwesomeIcon icon={faList} title="Content" /></React.Fragment>}
+        {drive.parity && <React.Fragment>&nbsp;<FontAwesomeIcon icon={faCheckDouble} title="Parity" /></React.Fragment>}
+        <br />
         <Size value={drive.free} /> / <Size value={drive.capacity} /><br />
         {drive.temperature}&deg;C
       </DriveDetails>
